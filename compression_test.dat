@@ -1,0 +1,57 @@
+model new 
+model large-strain off
+model configure fluid-flow
+
+zone create cylinder point 0 (0,0,0) point 1 (1,0,0) ...
+point 2 (0,4,0) point 3 (0,0,1) size 8 20 8 
+
+zone reflect normal (1,0,0)
+zone reflect normal (0,0,1)
+
+zone face skin
+[global conf = -12e6] ; confining pressure
+[global u0 = 2e6] ; initial pore pressure
+[global edot = 5e-6] ; loading velocity (strain rate), should be 1e-7
+[global bedding_dip = 30]
+[global softening = 0.8]
+
+zone fluid cmodel assign isotropic
+zone fluid property permeability 5e-20
+zone fluid property fluid-density 1000
+zone fluid property biot-modulus 4e11
+zone fluid property pore-pressure-generation on 
+zone fluid property porosity 0.1            ; Porosity
+zone fluid property mobility-coefficient 5e-17
+
+zone cmodel assign softening-ubiquitous 
+zone property bulk 1.19e10 shear 1.1e10
+zone property cohesion 2.72e5 friction 44 tension 2e6
+zone property table-joint-friction 'fri'
+table 'fri' add (0,30) (1e-4,28) (2e-4,26) (3e-4,24) (1,24)
+
+
+zone property dip [bedding_dip] 
+zone property dip-direction 0 
+zone property joint-cohesion 0.5e6
+
+
+zone property joint-tension 1e6
+zone property cohesion 1e7
+zone property friction 35
+
+zone initialize stress xx [conf] yy [conf] zz [conf] xy 0 xz 0 yz 0
+zone gridpoint initialize pore-pressure 2e6
+
+;zone face apply velocity (0, 1e-7,0) range position-y 0
+zone face apply stress-normal [conf] range group 'East'
+zone face apply velocity (0,0,0) range group 'North'
+zone face apply velocity (0, 1e-8,0) range group 'South'
+
+
+
+zone history displacement-y position (0,0,0)
+zone history stress-yy position (0,1,0)
+zone history stress-yy position (1,2,0)
+
+model step 50000
+model save 'Softening'

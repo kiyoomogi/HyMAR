@@ -1,0 +1,75 @@
+model new
+model large-strain off
+model configure imass
+
+
+;mesh
+zone import 'decovalex_mesh.f3grid'
+zone face skin
+
+zone cmodel assign imass
+
+
+;parameters
+[global conf = -12e6] ; confinement must be negative or zero
+[global edot = 5.e-6] ; loading velocity
+[global H = 0.06]
+[global vz = edot * H]
+
+
+;fluid
+model configure fluid-flow
+zone fluid cmodel assign isotropic
+zone fluid property permeability 5e-20
+zone fluid property fluid-density 1000
+zone fluid property biot-modulus 4e11
+zone fluid property pore-pressure-generation on 
+zone fluid property porosity 0.1            ; Porosity
+zone fluid property mobility-coefficient 5e-17
+
+
+zone initialize stress xx [conf] yy [conf] zz [conf] xy 0 xz 0 yz 0
+zone face apply velocity (0,0,[-vz]) range group 'Top'
+zone face apply velocity (0,0,0) range group 'Bottom'
+zone face apply stress-normal [conf] range group 'South' or 'North'
+
+[global gps_top = list(gp.list)(gp.isgroup(::gp.list,'Top'))]
+[global area = 3.14 * 0.015 * 0.015]
+fish define stress_top
+  local force_top = list.sum(gp.force.unbal(::gps_top)->z)
+  global stress_top = force_top/area
+end
+
+[global gp_top1 = gp.near(0,0,0.06)]
+[global zlength = 0.06]
+fish define strain_zz
+  global strain_zz = 100.0*2.0*gp.disp.z(gp_top1)/zlength
+end
+
+fish define deviator 
+global deviator = stress_top - conf
+end
+
+
+zone initialize density 2600
+zone property in_stren_gsi 90.0 ;was 70
+zone property in_stren_ucsi 10e6
+zone property in_stren_mi 10
+zone property in_mod_youngintact 3e9
+zone property in_weak_multecrit 0.25
+zone property flag_bulking_denadj on
+
+zone property flag_uj_usejoints on
+zone property in_uj_jfric 15
+zone property in_uj_jdip 30
+zone property in_uj_jddirection 0
+
+
+history interval 100
+fish history stress_top
+fish history strain_zz
+fish history deviator
+
+model cycle 20000
+
+model save 'confinedCompressionMultiZones'

@@ -1,0 +1,104 @@
+model new
+model large-strain off
+
+;mesh
+zone import 'decovalex_mesh.f3grid'
+zone face skin
+
+zone cmodel assign softening-ubiquitous
+
+
+;sample dimensions
+[global H = 0.06]
+[global r = 0.015]
+[global h = H/22.0]
+[global Hh = H + 0.003]
+
+;confining pressure, strain rate, initial pore pressure
+[global conf = -12e6] ; confinement must be negative or zero
+[global edot = 1.e-6] ; loading velocity
+[global vz = edot * H]
+[global u0 = 2e6] ;initial pore pressure
+
+;mechanical parameters
+[global young = 1e9]
+[global coh1 = 0.5e6] ;cohesion joint
+[global coh1_res = 0]
+[global fric1 = 17]   ;friction joint
+[global fric1_res = fric1 * 0.8] ;residual friction joint
+[global fric1_hard = fric1] ;residual friction joint
+[global dip_angle = 60]
+
+;fluid
+model configure fluid-flow
+zone fluid cmodel assign isotropic
+zone fluid property permeability 5e-20
+zone fluid property fluid-density 1000
+zone fluid property biot-modulus 7e9 ;12 GPa for solid grain bulk mod (Keller, 2017)
+zone fluid property pore-pressure-generation on 
+zone fluid property porosity 0.16            ; Porosity
+zone fluid property mobility-coefficient 5e-17 ; Permeability / viscosity
+zone gridpoint initialize pore-pressure [u0]
+
+;boundary and initial stress conditions
+zone face apply velocity-z [-vz] range group 'Top'
+zone face apply velocity-x 0 range group 'Top'
+zone face apply velocity-y 0 range group 'Top'
+;zone gridpoint fix velocity-x range union position-z [H] [Hh] position-z 0 [h]
+;zone gridpoint fix velocity-y range union position-z [H] [Hh] position-z 0 [h]
+zone face apply velocity-z 0 range group 'Bottom'
+zone initialize stress xx [conf] yy [conf] zz [conf] xy 0 xz 0 yz 0
+zone face apply stress-normal [conf] range group 'South' or 'North'
+
+;axial stress
+[global gps_top = list(gp.list)(gp.isgroup(::gp.list,'Top'))]
+[global area = 3.14*0.015*0.015]
+fish define stress_top
+  local force_top = list.sum(gp.force.unbal(::gps_top)->z)
+  local stress_top = (force_top/area) * 1e-6
+  global q = stress_top + conf * 1e-6
+end
+
+[global gp_top1 = gp.near(0.0,0.0,0.06)]
+[global zlength = 0.063]
+fish define strain_zz
+  global strain_zz = 100.0*1.0*gp.disp.z(gp_top1)/zlength
+end
+
+
+
+
+zone initialize density 2600
+
+;mechanical parameters
+zone property cohesion 5e6 ;very hgih
+zone property friction 30
+zone property tension 1e6
+zone property young [young]
+zone property poisson 0.35
+
+
+;joint parameters
+zone property dip [dip_angle]
+zone property dip-direction 0
+zone property joint-cohesion 0.5e6
+zone property joint-tension 1e6
+zone property table-joint-friction 'fric-1'
+zone property joint-friction 15
+
+
+table 'fric-1' add (0 13) (2e-3 13.5) (1.3e-2 8.5) 
+;table 'coh-1' add (0 [coh1]) (0.01 [coh1_res])
+
+history interval 100
+fish history stress_top
+fish history strain_zz
+fish history q
+
+model cycle 13000
+
+history export 3 vs 2 table '1'
+table '1' export 'q_strain' truncate
+
+
+model save 'subi_model'

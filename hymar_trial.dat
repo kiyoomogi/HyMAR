@@ -1,0 +1,59 @@
+model new 
+model large-strain off
+model configure imass 
+
+fish define size_input 
+    global max_x = 40.
+    global max_y = 40. 
+    global max_z = 80. 
+    global nzone = 1.5
+    global nzxe = int(max_x/nzone)
+    global nzye = int(max_y/nzone)
+    global nzze = int(max_z/nzone)
+end
+
+[size_input]
+
+zone create brick point 0 0 0 0 point 1 [max_x] 0 0 point 2 0 [max_y] 0 ...
+point 3 0 0 [max_z] size [nzxe] [nzye] [nzze] group 'rock'
+
+zone face skin 
+
+zone cmodel assign imass 
+
+[global conf = -1e6] ;confinement must be negative or zero
+[global appliedVel = 1.e-5] ; loading velocity
+
+zone initialize stress xx [conf] yy [conf] zz [conf] xy 0 xz 0 yz 0
+zone face apply velocity-z [-appliedVel] range group 'Top'
+zone face apply velocity-z 0 range group 'Bottom'
+zone face apply stress-normal [conf] range group 'South' or 'North'
+zone face apply stress-normal [conf] range group 'West' or 'East'
+
+[global gps_top = list(gp.list)(gp.isgroup(::gp.list, 'Top'))]
+[global area = max_y*max_x]
+fish define stress_top
+local force_top = list.sum(gp.force.unbal(::gps_top)->z)
+global stress_top = force_top/area
+end
+
+[global gp_top1 = gp.near(max_x, max_y,max_z)]
+[global zlength = max_z]
+fish define strain_zz
+global strain_zz = 100.0*2.0*gp.disp.z(gp_top1)/zlength
+end
+
+zone initialize density 2600 
+zone property in_stren_gsi 70.0
+zone property in_stren_ucsi 100.0e6
+zone property in_stren_mi 15.0
+zone property in_mod_youngintact 40e9
+zone property in_weak_multecrit 0.25
+zone property flag_bulking_denadj on
+
+history interval 100
+fish history stress_top
+fish history strain_zz
+model cycle 2000
+
+model save 'confinedCompressionMultiZones'
