@@ -16,12 +16,12 @@ zone cmodel assign softening-ubiquitous
 
 ;confining pressure, strain rate, initial pore pressure
 [global conf = -12e6] ; confinement must be negative or zero
-[global edot = 1.e-6] ; loading velocity
+[global edot = 5.e-6] ; loading velocity
 [global vz = edot * H]
 [global u0 = 2e6] ;initial pore pressure
 
 ;mechanical parameters
-[global young = 1e9]
+[global young = 1.25e9]
 [global coh1 = 0.5e6] ;cohesion joint
 [global coh1_res = 0]
 [global fric1 = 17]   ;friction joint
@@ -86,8 +86,8 @@ zone property joint-tension 1e6
 zone property table-joint-friction 'fric-1'
 zone property joint-friction 15
 
-
-table 'fric-1' add (0 15) (2e-3 15.5) (1.3e-2 10.5) 
+ 
+table 'fric-1' add (0 15.5) (2e-3 16) (1.3e-2 11.5) 
 ;table 'coh-1' add (0 [coh1]) (0.01 [coh1_res])
 
 history interval 100
@@ -95,7 +95,7 @@ fish history stress_top
 fish history strain_zz
 fish history q
 
-model cycle 100000
+model cycle 30000
 
 history export 3 vs 2 table '1'
 table '1' export 'q_strain' truncate
