@@ -95,8 +95,11 @@ fish history q
 zone history pore-pressure position (0,0,0.04)
 model cycle 30000
 
-history export 3 vs 2 vs 4 table '1'
+history export 3 vs 2 table '1'
 table '1' export 'q_strain' truncate
+
+history export 4 vs 2 table '2'
+table '2' export 'pp_strain' truncate
 
 
 model save 'subi_model'
