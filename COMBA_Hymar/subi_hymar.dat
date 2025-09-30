@@ -34,7 +34,7 @@ model configure fluid-flow
 zone fluid cmodel assign isotropic
 zone fluid property permeability 5e-20
 zone fluid property fluid-density 1000
-zone fluid property biot-modulus 7e9 ;12 GPa for solid grain bulk mod (Keller, 2017)
+zone fluid property biot-modulus 11e9 ;12 GPa for solid grain bulk mod (Keller, 2017)
 zone fluid property pore-pressure-generation on 
 zone fluid property porosity 0.16            ; Porosity
 zone fluid property mobility-coefficient 5e-17 ; Permeability / viscosity
@@ -66,8 +66,6 @@ fish define strain_zz
 end
 
 
-
-
 zone initialize density 2600
 
 ;mechanical parameters
@@ -94,10 +92,10 @@ history interval 100
 fish history stress_top
 fish history strain_zz
 fish history q
-
+zone history pore-pressure position (0,0,0.04)
 model cycle 30000
 
-history export 3 vs 2 table '1'
+history export 3 vs 2 vs 4 table '1'
 table '1' export 'q_strain' truncate
 
 

@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-30T16:38:39" ,
+        "DateTime" : "2025-09-30T17:05:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -15,7 +15,7 @@
         {
             "Name" : "Terminal" ,
             "Entry" : {
-                "SaveFile" : "" ,
+                "SaveFile" : "subi_model.sav" ,
                 "Kernel" : {
                     "LoadCommands" : [  ],
                     "ModuleList" : {
@@ -741,8 +741,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 8.374794865281355e-03 ,
-                                            "Maximum" : 1.288875148272165e+00 ,
+                                            "Minimum" : 5.334675537566601e-03 ,
+                                            "Maximum" : 1.077709599151837e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -759,8 +759,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : -1.158177396198727e-01 ,
-                                            "Maximum" : 1.070269775959661e+01 ,
+                                            "Minimum" : -1.626728751292621e-01 ,
+                                            "Maximum" : 1.044830944419905e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -869,9 +869,9 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 1.024344550210146e-01  , "y" : -2.651500699363541e-02  , "z" : 1.843912870547676e-02 } ,
-                            "ViewCenter" : { "x" : 2.337769661682129e-05  , "y" : -3.555281129496584e-03  , "z" : 2.606888114886612e-02 } ,
-                            "Up" : { "x" : 6.615636775677190e-02  , "y" : -3.627483485220127e-02  , "z" : 9.971496735002606e-01 } ,
+                            "EyePosition" : { "x" : 9.762683767034214e-02  , "y" : -2.477674012253328e-02  , "z" : 3.426072133687980e-02 } ,
+                            "ViewCenter" : { "x" : 2.337769661681090e-05  , "y" : -3.555281129496584e-03  , "z" : 2.606888114886612e-02 } ,
+                            "Up" : { "x" : -8.593913299626485e-02  , "y" : -1.069168363376028e-02  , "z" : 9.962430192081277e-01 } ,
                             "Magnification" : 1.000000000000000e+00 ,
                             "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
@@ -1128,7 +1128,7 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "ADActive" : true ,
-                                        "Factor" : 1.000000000000000e+01 ,
+                                        "Factor" : 5.000000000000000e+00 ,
                                         "Caption" : {
                                             "Active" : true ,
                                             "Enabled" : true ,
@@ -1159,7 +1159,7 @@
                                             "PieceName" : "" ,
                                             "UsePiece" : false 
                                         },
-                                        "ColorName" : "Property" ,
+                                        "ColorName" : "Group" ,
                                         "Property" : "strain-shear-plastic-joint" ,
                                         "StateBy" : 0 ,
                                         "UsesFaceOnly" : false ,
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 3.082423763691198e-03 ,
-                                        "Maximum" : 5.679111581876162e-02 ,
-                                        "Interval" : 5.000000000000000e-03 ,
+                                        "Minimum" : 4.645885266341828e+06 ,
+                                        "Maximum" : 4.757266168271760e+06 ,
+                                        "Interval" : 1.000000000000000e+04 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1237,7 +1237,7 @@
                                                 "Stress" : false ,
                                                 "Log" : false ,
                                                 "Active" : true ,
-                                                "Keyword" : "strain-increment" ,
+                                                "Keyword" : "pore-pressure" ,
                                                 "GpData" : {
                                                     "Component" : 2 ,
                                                     "Quantity" : 10 ,
@@ -1246,7 +1246,7 @@
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "" ,
+                                                    "Keyword" : "pore-pressure" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 },
@@ -1258,19 +1258,19 @@
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "strain-increment" ,
+                                                    "Keyword" : "" ,
                                                     "Property" : "strain-shear-plastic-joint" ,
                                                     "PropType" : 0 
                                                 },
                                                 "ZoneInterp" : {
-                                                    "Active" : true ,
+                                                    "Active" : false ,
                                                     "Method" : 0 ,
                                                     "RadRatio" : 7.500000000000000e-01 ,
                                                     "Power" : 3.000000000000000e+00 ,
                                                     "Tolerance" : 1.000000000000000e-07 ,
                                                     "HideNull" : true 
                                                 },
-                                                "Source" : 0 
+                                                "Source" : 1 
                                             }
                                         ],
                                         "Gp" : {
@@ -1285,7 +1285,7 @@
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "" ,
+                                                    "Keyword" : "pore-pressure" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 }
@@ -1303,7 +1303,7 @@
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "strain-increment" ,
+                                                    "Keyword" : "" ,
                                                     "Property" : "strain-shear-plastic-joint" ,
                                                     "PropType" : 0 
                                                 }
@@ -1328,7 +1328,7 @@
                                             "Tolerance" : 1.000000000000000e-07 
                                         },
                                         "CompressionPositive" : false ,
-                                        "Source" : 0 
+                                        "Source" : 1 
                                     },
                                     "ColorMap" : {
                                         "Active" : true ,
@@ -1336,23 +1336,14 @@
                                         "Global" : true ,
                                         "MapSto" : [ 
                                             {
-                                                "Key" : "Property strain-shear-plastic-joint" ,
+                                                "Key" : "Group" ,
                                                 "Value" : {
                                                     "Array" : [ 
                                                         
                                                         {
                                                             "Color" : "#00ffffFF" ,
                                                             "Alias" : "" ,
-                                                            "Label" : "0.0132241" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#2e8b56FF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0130048" ,
+                                                            "Label" : "Default=INJEC" ,
                                                             "Bool" : true ,
                                                             "Used2" : false ,
                                                             "Default" : false 
@@ -1361,115 +1352,16 @@
                                                         {
                                                             "Color" : "#ff0000FF" ,
                                                             "Alias" : "" ,
-                                                            "Label" : "0.0127446" ,
+                                                            "Label" : "Default=BNDTO" ,
                                                             "Bool" : true ,
                                                             "Used2" : false ,
                                                             "Default" : false 
                                                         }
                                                         , 
                                                         {
-                                                            "Color" : "#ff00d5FF" ,
+                                                            "Color" : "#2e8b56FF" ,
                                                             "Alias" : "" ,
-                                                            "Label" : "0.0127404" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#ff4000FF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0131781" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#0080ffFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0124741" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#b7001fFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0126981" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#aa00ffFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0129316" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#ff8000FF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0121794" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#663333FF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.00946147" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#4f632dFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0126495" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#50755eFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0131418" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#6666ffFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.012899" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#5500ffFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0125713" ,
-                                                            "Bool" : true ,
-                                                            "Used2" : false ,
-                                                            "Default" : false 
-                                                        }
-                                                        , 
-                                                        {
-                                                            "Color" : "#0000ffFF" ,
-                                                            "Alias" : "" ,
-                                                            "Label" : "0.0126396" ,
+                                                            "Label" : "Default=BNDBO" ,
                                                             "Bool" : true ,
                                                             "Used2" : false ,
                                                             "Default" : false 
@@ -1479,7 +1371,7 @@
                                                 }
                                             }
                                         ],
-                                        "Category" : "Property strain-shear-plastic-joint" ,
+                                        "Category" : "Group" ,
                                         "CLabel" : {
                                             "Active" : true ,
                                             "Enabled" : true ,
@@ -1571,7 +1463,7 @@
     ],
     "Terminal" : {
         "MoveLists" : true ,
-        "LineLimit" : 5 
+        "LineLimit" : 11 
     },
     "ColorMap" : {
         "EMaps" : [ 
@@ -1772,23 +1664,9 @@
                         }
                     }, 
                     {
-                        "Key" : "0.012899" ,
+                        "Key" : "0.00946147" ,
                         "Value" : {
-                            "Color" : "#6666ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "0.0126396" ,
-                        "Value" : {
-                            "Color" : "#0000ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "0.0130048" ,
-                        "Value" : {
-                            "Color" : "#2e8b56FF" ,
+                            "Color" : "#663333FF" ,
                             "Alias" : "" 
                         }
                     }, 
@@ -1800,6 +1678,13 @@
                         }
                     }, 
                     {
+                        "Key" : "0.0125713" ,
+                        "Value" : {
+                            "Color" : "#5500ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
                         "Key" : "0.0126495" ,
                         "Value" : {
                             "Color" : "#4f632dFF" ,
@@ -1807,9 +1692,30 @@
                         }
                     }, 
                     {
-                        "Key" : "0.0125713" ,
+                        "Key" : "0.0130048" ,
                         "Value" : {
-                            "Color" : "#5500ffFF" ,
+                            "Color" : "#2e8b56FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "0.0126396" ,
+                        "Value" : {
+                            "Color" : "#0000ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "0.0131418" ,
+                        "Value" : {
+                            "Color" : "#50755eFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "0.0127446" ,
+                        "Value" : {
+                            "Color" : "#ff0000FF" ,
                             "Alias" : "" 
                         }
                     }, 
@@ -1821,9 +1727,9 @@
                         }
                     }, 
                     {
-                        "Key" : "0.0129316" ,
+                        "Key" : "0.012899" ,
                         "Value" : {
-                            "Color" : "#aa00ffFF" ,
+                            "Color" : "#6666ffFF" ,
                             "Alias" : "" 
                         }
                     }, 
@@ -1831,6 +1737,13 @@
                         "Key" : "0.0126981" ,
                         "Value" : {
                             "Color" : "#b7001fFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "0.0129316" ,
+                        "Value" : {
+                            "Color" : "#aa00ffFF" ,
                             "Alias" : "" 
                         }
                     }, 
@@ -1845,27 +1758,6 @@
                         "Key" : "0.0131781" ,
                         "Value" : {
                             "Color" : "#ff4000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "0.0127446" ,
-                        "Value" : {
-                            "Color" : "#ff0000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "0.0131418" ,
-                        "Value" : {
-                            "Color" : "#50755eFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "0.00946147" ,
-                        "Value" : {
-                            "Color" : "#663333FF" ,
                             "Alias" : "" 
                         }
                     }
@@ -1904,7 +1796,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_subi_hymar" 
+            "Focus" : "Plot_history_comba" 
         },
         "Recent" : {
             "MRUMagic" : [ 
