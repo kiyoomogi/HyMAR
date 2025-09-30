@@ -27,7 +27,7 @@ zone cmodel assign softening-ubiquitous
 [global fric1 = 17]   ;friction joint
 [global fric1_res = fric1 * 0.8] ;residual friction joint
 [global fric1_hard = fric1] ;residual friction joint
-[global dip_angle = 30]
+[global dip_angle = 45]
 
 ;fluid
 model configure fluid-flow

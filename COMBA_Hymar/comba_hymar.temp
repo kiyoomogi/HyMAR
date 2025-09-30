@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-30T18:35:39" ,
+        "DateTime" : "2025-09-30T18:56:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -742,7 +742,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : 4.692832443979572e-03 ,
-                                            "Maximum" : 1.426026302690982e+00 ,
+                                            "Maximum" : 1.430134154863520e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -760,7 +760,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : -2.105991296813201e-01 ,
-                                            "Maximum" : 1.124332409021531e+01 ,
+                                            "Maximum" : 7.565868930968676e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -769,7 +769,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : 1 ,
+                                                "Value" : 0 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -869,9 +869,9 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 1.033243918565242e-01  , "y" : -3.364735296483814e-03  , "z" : 4.155375355157492e-02 } ,
+                            "EyePosition" : { "x" : 8.697064209470452e-02  , "y" : 5.266730990312544e-02  , "z" : 4.129050460692203e-02 } ,
                             "ViewCenter" : { "x" : -6.322984081910567e-04  , "y" : -3.379478704752286e-03  , "z" : 2.523207396013599e-02 } ,
-                            "Up" : { "x" : -1.550971170545328e-01  , "y" : -8.937867005987388e-03  , "z" : 9.878587949776809e-01 } ,
+                            "Up" : { "x" : -1.599203188443033e-01  , "y" : -3.271480074732785e-02  , "z" : 9.865876714376676e-01 } ,
                             "Magnification" : 1.000000000000000e+00 ,
                             "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 6.371446380324661e+06 ,
-                                        "Maximum" : 6.390092892524766e+06 ,
-                                        "Interval" : 2.500000000000000e+03 ,
+                                        "Minimum" : 2.892958716473819e-04 ,
+                                        "Maximum" : 9.057691195607767e-04 ,
+                                        "Interval" : 1.000000000000000e-04 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1230,29 +1230,29 @@
                                         "Enabled" : true ,
                                         "Data" : [ 
                                             {
-                                                "Component" : 2 ,
-                                                "Quantity" : 10 ,
+                                                "Component" : 3 ,
+                                                "Quantity" : 9 ,
                                                 "Type" : 0 ,
                                                 "Extra" : 1 ,
                                                 "Stress" : false ,
                                                 "Log" : false ,
                                                 "Active" : true ,
-                                                "Keyword" : "pore-pressure" ,
+                                                "Keyword" : "displacement" ,
                                                 "GpData" : {
-                                                    "Component" : 2 ,
-                                                    "Quantity" : 10 ,
+                                                    "Component" : 3 ,
+                                                    "Quantity" : 9 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "pore-pressure" ,
+                                                    "Keyword" : "displacement" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 },
                                                 "ZoneData" : {
-                                                    "Component" : 2 ,
-                                                    "Quantity" : 10 ,
+                                                    "Component" : 3 ,
+                                                    "Quantity" : 9 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : false ,
@@ -1278,14 +1278,14 @@
                                             "Enabled" : true ,
                                             "Data" : [ 
                                                 {
-                                                    "Component" : 2 ,
-                                                    "Quantity" : 10 ,
+                                                    "Component" : 3 ,
+                                                    "Quantity" : 9 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "pore-pressure" ,
+                                                    "Keyword" : "displacement" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 }
@@ -1296,8 +1296,8 @@
                                             "Enabled" : true ,
                                             "Data" : [ 
                                                 {
-                                                    "Component" : 2 ,
-                                                    "Quantity" : 10 ,
+                                                    "Component" : 3 ,
+                                                    "Quantity" : 9 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : false ,
@@ -1796,7 +1796,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Plot_history_comba" 
+            "Focus" : "Editor_subi_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 
