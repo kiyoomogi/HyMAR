@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-30T17:50:39" ,
+        "DateTime" : "2025-09-30T18:05:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -15,7 +15,7 @@
         {
             "Name" : "Terminal" ,
             "Entry" : {
-                "SaveFile" : "" ,
+                "SaveFile" : "subi_model.sav" ,
                 "Kernel" : {
                     "LoadCommands" : [  ],
                     "ModuleList" : {
@@ -741,8 +741,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 5.333366593266690e-03 ,
-                                            "Maximum" : 9.878222006557070e-01 ,
+                                            "Minimum" : 4.691169365412207e-03 ,
+                                            "Maximum" : 1.426544517779587e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -751,7 +751,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : -1 ,
+                                                "Value" : 0 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -759,8 +759,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : -1.627751401734372e-01 ,
-                                            "Maximum" : 1.070788342774408e+01 ,
+                                            "Minimum" : -1.730549301538673e-01 ,
+                                            "Maximum" : 1.063821620752025e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 6.684770380775043e+06 ,
-                                        "Maximum" : 6.891881424662762e+06 ,
-                                        "Interval" : 2.500000000000000e+04 ,
+                                        "Minimum" : 6.228527111193988e+06 ,
+                                        "Maximum" : 6.253981587865433e+06 ,
+                                        "Interval" : 2.500000000000000e+03 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1463,7 +1463,7 @@
     ],
     "Terminal" : {
         "MoveLists" : true ,
-        "LineLimit" : 5 
+        "LineLimit" : 11 
     },
     "ColorMap" : {
         "EMaps" : [ 

@@ -15,7 +15,7 @@ zone cmodel assign softening-ubiquitous
 [global Hh = H + 0.003]
 
 ;confining pressure, strain rate, initial pore pressure
-[global conf = -12e6] ; confinement must be negative or zero
+[global conf = -13.5e6] ; confinement must be negative or zero
 [global edot = 5.e-6] ; loading velocity
 [global vz = edot * H]
 [global u0 = 3.5e6] ;initial pore pressure
@@ -31,10 +31,12 @@ zone cmodel assign softening-ubiquitous
 
 ;fluid
 model configure fluid-flow
-zone fluid cmodel assign isotropic
-zone fluid property permeability 5e-20
+zone fluid cmodel assign anisotropic
+zone fluid property permeability-zz 1e-20
+zone fluid property permeability-xx 5e-20
+zone fluid property permeability-yy 5e-20
 zone fluid property fluid-density 1000
-zone fluid property biot-modulus 11e9 ;12 GPa for solid grain bulk mod (Keller, 2017)
+zone fluid property biot-modulus 12.5e9 ;12 GPa for solid grain bulk mod (Keller, 2017)
 zone fluid property pore-pressure-generation on 
 zone fluid property porosity 0.16            ; Porosity
 zone fluid property mobility-coefficient 5e-17 ; Permeability / viscosity
@@ -92,7 +94,7 @@ history interval 100
 fish history stress_top
 fish history strain_zz
 fish history q
-zone history pore-pressure position (0,0,0.04)
+zone history pore-pressure position (0,0,0.06)
 model cycle 30000
 
 history export 3 vs 2 table '1'
