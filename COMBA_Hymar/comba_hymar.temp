@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-30T18:11:39" ,
+        "DateTime" : "2025-09-30T18:35:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -15,7 +15,7 @@
         {
             "Name" : "Terminal" ,
             "Entry" : {
-                "SaveFile" : "" ,
+                "SaveFile" : "subi_model.sav" ,
                 "Kernel" : {
                     "LoadCommands" : [  ],
                     "ModuleList" : {
@@ -741,8 +741,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 4.692846926540463e-03 ,
-                                            "Maximum" : 1.367872825211276e+00 ,
+                                            "Minimum" : 4.692832443979572e-03 ,
+                                            "Maximum" : 1.426026302690982e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -759,8 +759,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : -2.107016153834138e-01 ,
-                                            "Maximum" : 1.170406378910954e+01 ,
+                                            "Minimum" : -2.105991296813201e-01 ,
+                                            "Maximum" : 1.124332409021531e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -869,9 +869,9 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 9.762683767034214e-02  , "y" : -2.477674012253328e-02  , "z" : 3.426072133687980e-02 } ,
-                            "ViewCenter" : { "x" : 2.337769661681090e-05  , "y" : -3.555281129496584e-03  , "z" : 2.606888114886612e-02 } ,
-                            "Up" : { "x" : -8.593913299626485e-02  , "y" : -1.069168363376028e-02  , "z" : 9.962430192081277e-01 } ,
+                            "EyePosition" : { "x" : 1.033243918565242e-01  , "y" : -3.364735296483814e-03  , "z" : 4.155375355157492e-02 } ,
+                            "ViewCenter" : { "x" : -6.322984081910567e-04  , "y" : -3.379478704752286e-03  , "z" : 2.523207396013599e-02 } ,
+                            "Up" : { "x" : -1.550971170545328e-01  , "y" : -8.937867005987388e-03  , "z" : 9.878587949776809e-01 } ,
                             "Magnification" : 1.000000000000000e+00 ,
                             "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 6.497728295943473e+06 ,
-                                        "Maximum" : 6.538182381986973e+06 ,
-                                        "Interval" : 5.000000000000000e+03 ,
+                                        "Minimum" : 6.371446380324661e+06 ,
+                                        "Maximum" : 6.390092892524766e+06 ,
+                                        "Interval" : 2.500000000000000e+03 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1259,7 +1259,7 @@
                                                     "Log" : false ,
                                                     "Active" : true ,
                                                     "Keyword" : "" ,
-                                                    "Property" : "strain-shear-plastic-joint" ,
+                                                    "Property" : "porosity" ,
                                                     "PropType" : 0 
                                                 },
                                                 "ZoneInterp" : {
@@ -1304,7 +1304,7 @@
                                                     "Log" : false ,
                                                     "Active" : true ,
                                                     "Keyword" : "" ,
-                                                    "Property" : "strain-shear-plastic-joint" ,
+                                                    "Property" : "porosity" ,
                                                     "PropType" : 0 
                                                 }
                                             ]
@@ -1463,7 +1463,7 @@
     ],
     "Terminal" : {
         "MoveLists" : true ,
-        "LineLimit" : 5 
+        "LineLimit" : 11 
     },
     "ColorMap" : {
         "EMaps" : [ 
@@ -1796,7 +1796,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_subi_hymar" 
+            "Focus" : "Plot_history_comba" 
         },
         "Recent" : {
             "MRUMagic" : [ 

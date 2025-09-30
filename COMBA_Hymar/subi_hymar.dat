@@ -38,7 +38,9 @@ zone fluid property permeability-yy 5e-20
 zone fluid property fluid-density 1000
 zone fluid property biot-modulus 12.5e9 ;12 GPa for solid grain bulk mod (Keller, 2017)
 zone fluid property pore-pressure-generation on 
-zone fluid property porosity 0.16            ; Porosity
+zone fluid property porosity 0.16 
+zone fluid property porosity 1e-6 range group 'BNDBO'
+zone fluid property porosity 1e-6 range group 'BNDTO'; Porosity
 zone fluid property mobility-coefficient 5e-17 ; Permeability / viscosity
 zone gridpoint initialize pore-pressure [u0]
 
