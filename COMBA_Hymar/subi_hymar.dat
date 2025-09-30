@@ -27,7 +27,7 @@ zone cmodel assign softening-ubiquitous
 [global fric1 = 17]   ;friction joint
 [global fric1_res = fric1 * 0.8] ;residual friction joint
 [global fric1_hard = fric1] ;residual friction joint
-[global dip_angle = 60]
+[global dip_angle = 30]
 
 ;fluid
 model configure fluid-flow
@@ -95,7 +95,7 @@ fish history stress_top
 fish history strain_zz
 fish history q
 
-model cycle 13000
+model cycle 100000
 
 history export 3 vs 2 table '1'
 table '1' export 'q_strain' truncate

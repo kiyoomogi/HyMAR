@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-29T23:41:39" ,
+        "DateTime" : "2025-09-30T16:08:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -742,7 +742,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : 1.675135260002377e-03 ,
-                                            "Maximum" : 2.181405940682236e-01 ,
+                                            "Maximum" : 1.701506081025190e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -751,7 +751,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : -1 ,
+                                                "Value" : 0 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -760,7 +760,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : -2.680599532578185e-01 ,
-                                            "Maximum" : 2.053915231556330e+00 ,
+                                            "Maximum" : 8.328355869361566e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -869,9 +869,9 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : -1.378908034661030e-01  , "y" : 2.304580232829422e-02  , "z" : 3.594069009117358e-02 } ,
-                            "ViewCenter" : { "x" : 2.784533432865977e-17  , "y" : -1.357298662657057e-17  , "z" : 3.000000000000001e-02 } ,
-                            "Up" : { "x" : 3.555422875532353e-02  , "y" : -4.462466410071533e-02  , "z" : 9.983709411694195e-01 } ,
+                            "EyePosition" : { "x" : 1.002759766863939e-01  , "y" : -3.844221563215328e-02  , "z" : 3.007471925786845e-02 } ,
+                            "ViewCenter" : { "x" : 1.149282688774067e-07  , "y" : 8.227665381985161e-08  , "z" : 2.986413463206598e-02 } ,
+                            "Up" : { "x" : 1.663361439280121e-02  , "y" : 4.885904516313604e-02  , "z" : 9.986671700711796e-01 } ,
                             "Magnification" : 1.000000000000000e+00 ,
                             "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 1.154326780573036e-03 ,
-                                        "Maximum" : 3.301782321158205e-03 ,
-                                        "Interval" : 2.500000000000000e-04 ,
+                                        "Minimum" : 2.668648928304112e-03 ,
+                                        "Maximum" : 7.561390985593980e-02 ,
+                                        "Interval" : 1.000000000000000e-02 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1904,7 +1904,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_subi_hymar" 
+            "Focus" : "Plot_plot_comba" 
         },
         "Recent" : {
             "MRUMagic" : [ 
