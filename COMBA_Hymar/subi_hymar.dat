@@ -18,7 +18,7 @@ zone cmodel assign softening-ubiquitous
 [global conf = -12e6] ; confinement must be negative or zero
 [global edot = 5.e-6] ; loading velocity
 [global vz = edot * H]
-[global u0 = 2e6] ;initial pore pressure
+[global u0 = 3.5e6] ;initial pore pressure
 
 ;mechanical parameters
 [global young = 1.25e9]
@@ -85,7 +85,7 @@ zone property table-joint-friction 'fric-1'
 zone property joint-friction 15
 
  
-table 'fric-1' add (0 15.5) (2e-3 16) (1.3e-2 11.5) 
+table 'fric-1' add (0 17.5) (2e-3 18) (1.3e-2 13.5) 
 ;table 'coh-1' add (0 [coh1]) (0.01 [coh1_res])
 
 history interval 100

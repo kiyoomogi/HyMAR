@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-30T17:17:39" ,
+        "DateTime" : "2025-09-30T17:50:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -524,7 +524,7 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -2.743782226240391e+00  , "z" : 0.000000000000000e+00 } ,
+                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -2.257316427817949e+00  , "z" : 0.000000000000000e+00 } ,
                             "ViewCenter" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } ,
                             "Up" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 1.000000000000000e+00 } ,
                             "Magnification" : 1.000000000000000e+00 ,
@@ -741,8 +741,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 5.334675537566601e-03 ,
-                                            "Maximum" : 6.962772673753993e-02 ,
+                                            "Minimum" : 5.333366593266690e-03 ,
+                                            "Maximum" : 9.878222006557070e-01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -751,7 +751,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : -2 ,
+                                                "Value" : -1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -759,8 +759,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 2.032705607901758e+06 ,
-                                            "Maximum" : 2.306713961993643e+06 ,
+                                            "Minimum" : -1.627751401734372e-01 ,
+                                            "Maximum" : 1.070788342774408e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -769,7 +769,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : 6 ,
+                                                "Value" : 1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -820,7 +820,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Style" : 0 ,
-                                                "Name" : "4" ,
+                                                "Name" : "3" ,
                                                 "Alias" : "" ,
                                                 "XReversed" : false ,
                                                 "YReversed" : false ,
@@ -839,7 +839,7 @@
                                                     "Size" : 2 ,
                                                     "Type" : 0 
                                                 },
-                                                "ID" : "4" 
+                                                "ID" : "3" 
                                             }
                                         ]
                                     },
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 2.290326328849131e+06 ,
-                                        "Maximum" : 2.361315356279957e+06 ,
-                                        "Interval" : 1.000000000000000e+04 ,
+                                        "Minimum" : 6.684770380775043e+06 ,
+                                        "Maximum" : 6.891881424662762e+06 ,
+                                        "Interval" : 2.500000000000000e+04 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
