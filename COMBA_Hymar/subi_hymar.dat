@@ -84,11 +84,9 @@ zone property dip-direction 0
 zone property joint-cohesion 0.5e6
 zone property joint-tension 1e6
 zone property table-joint-friction 'fric-1'
-zone property joint-friction 15
 
- 
-table 'fric-1' add (0 17.5) (2e-3 18) (1.3e-2 13.5) 
-;table 'coh-1' add (0 [coh1]) (0.01 [coh1_res])
+table 'fric-1' add (0 16.5) (2e-3 17) (1.3e-2 12.5) 
+table 'coh-1' add (0 0.5e6) (2e-3 0.5e6) (1.3e-2 0)
 
 history interval 100
 fish history stress_top
