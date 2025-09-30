@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-09-30T16:08:39" ,
+        "DateTime" : "2025-09-30T16:23:39" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -15,7 +15,7 @@
         {
             "Name" : "Terminal" ,
             "Entry" : {
-                "SaveFile" : "subi_model.sav" ,
+                "SaveFile" : "" ,
                 "Kernel" : {
                     "LoadCommands" : [  ],
                     "ModuleList" : {
@@ -742,7 +742,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : 1.675135260002377e-03 ,
-                                            "Maximum" : 1.701506081025190e+00 ,
+                                            "Maximum" : 1.160686842042505e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -760,7 +760,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : -2.680599532578185e-01 ,
-                                            "Maximum" : 8.328355869361566e+00 ,
+                                            "Maximum" : 9.932362778444919e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1199,9 +1199,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 2.668648928304112e-03 ,
-                                        "Maximum" : 7.561390985593980e-02 ,
-                                        "Interval" : 1.000000000000000e-02 ,
+                                        "Minimum" : 3.577092214564702e-03 ,
+                                        "Maximum" : 4.939486625688420e-02 ,
+                                        "Interval" : 5.000000000000000e-03 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1571,7 +1571,7 @@
     ],
     "Terminal" : {
         "MoveLists" : true ,
-        "LineLimit" : 11 
+        "LineLimit" : 5 
     },
     "ColorMap" : {
         "EMaps" : [ 
@@ -1904,7 +1904,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Plot_plot_comba" 
+            "Focus" : "Editor_subi_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 
