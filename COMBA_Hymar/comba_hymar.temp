@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-01T18:55:46" ,
+        "DateTime" : "2025-10-01T21:40:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -30,7 +30,8 @@
                 },
                 "SaveFiles" : {
                     "Files" : [ 
-                        "subi_model.sav" 
+                        "subi_model.sav" ,
+                        "comba_model.sav" 
                     ]
                 },
                 "ResultFiles" : {
@@ -567,9 +568,9 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : -1.060002151081123e-01  , "y" : 1.543278091424571e-06  , "z" : 2.902297704303304e-02 } ,
-                            "ViewCenter" : { "x" : 1.324129762950849e-06  , "y" : 1.543278091424571e-06  , "z" : 2.902297704303304e-02 } ,
-                            "Up" : { "x" : -0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 1.000000000000000e+00 } ,
+                            "EyePosition" : { "x" : 8.971280216839742e-02  , "y" : 3.912209377434900e-02  , "z" : 1.078393333667434e-01 } ,
+                            "ViewCenter" : { "x" : -3.015180236491141e-03  , "y" : -8.819710308987793e-04  , "z" : 2.782453742855441e-02 } ,
+                            "Up" : { "x" : -5.830068742797824e-01  , "y" : -2.154833297027126e-01  , "z" : 7.833708694882331e-01 } ,
                             "Magnification" : 1.000000000000000e+00 ,
                             "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
@@ -845,6 +846,66 @@
                                                                 "Matches" : 1 ,
                                                                 "CheckBy" : false 
                                                             }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
                                                         }
                                                     ]
                                                 }
@@ -920,7 +981,7 @@
                                             "UsePiece" : false 
                                         },
                                         "ColorName" : "State" ,
-                                        "Property" : "angle" ,
+                                        "Property" : "cohesion" ,
                                         "StateBy" : 0 ,
                                         "UsesFaceOnly" : false ,
                                         "UsesFace" : true ,
@@ -959,9 +1020,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : -9.057691195607767e-04 ,
-                                        "Maximum" : 0.000000000000000e+00 ,
-                                        "Interval" : 1.000000000000000e-04 ,
+                                        "Minimum" : -3.135018259351704e+07 ,
+                                        "Maximum" : -1.929356187390383e+07 ,
+                                        "Interval" : 2.000000000000000e+06 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -997,7 +1058,7 @@
                                                 "Stress" : false ,
                                                 "Log" : false ,
                                                 "Active" : true ,
-                                                "Keyword" : "displacement" ,
+                                                "Keyword" : "stress" ,
                                                 "GpData" : {
                                                     "Component" : 2 ,
                                                     "Quantity" : 2 ,
@@ -1006,7 +1067,7 @@
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "displacement" ,
+                                                    "Keyword" : "" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 },
@@ -1015,22 +1076,22 @@
                                                     "Quantity" : 2 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
-                                                    "Stress" : false ,
+                                                    "Stress" : true ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "" ,
-                                                    "Property" : "" ,
+                                                    "Keyword" : "stress" ,
+                                                    "Property" : "joint-friction-1" ,
                                                     "PropType" : 0 
                                                 },
                                                 "ZoneInterp" : {
-                                                    "Active" : false ,
+                                                    "Active" : true ,
                                                     "Method" : 0 ,
                                                     "RadRatio" : 7.500000000000000e-01 ,
                                                     "Power" : 3.000000000000000e+00 ,
                                                     "Tolerance" : 1.000000000000000e-07 ,
                                                     "HideNull" : true 
                                                 },
-                                                "Source" : 1 
+                                                "Source" : 0 
                                             }
                                         ],
                                         "Gp" : {
@@ -1045,7 +1106,7 @@
                                                     "Stress" : false ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "displacement" ,
+                                                    "Keyword" : "" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 }
@@ -1060,11 +1121,11 @@
                                                     "Quantity" : 2 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
-                                                    "Stress" : false ,
+                                                    "Stress" : true ,
                                                     "Log" : false ,
                                                     "Active" : true ,
-                                                    "Keyword" : "" ,
-                                                    "Property" : "" ,
+                                                    "Keyword" : "stress" ,
+                                                    "Property" : "joint-friction-1" ,
                                                     "PropType" : 0 
                                                 }
                                             ]
@@ -1088,7 +1149,7 @@
                                             "Tolerance" : 1.000000000000000e-07 
                                         },
                                         "CompressionPositive" : false ,
-                                        "Source" : 1 
+                                        "Source" : 0 
                                     },
                                     "ColorMap" : {
                                         "Active" : true ,
@@ -1214,7 +1275,7 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -3.335084444634110e+00  , "z" : 0.000000000000000e+00 } ,
+                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -4.752370220752800e+00  , "z" : 0.000000000000000e+00 } ,
                             "ViewCenter" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } ,
                             "Up" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 1.000000000000000e+00 } ,
                             "Magnification" : 1.000000000000000e+00 ,
@@ -1431,17 +1492,17 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 2.988745293033529e-01 ,
-                                            "Maximum" : 4.347660180989795e-01 ,
-                                            "MinAuto" : false ,
-                                            "MaxAuto" : false ,
+                                            "Minimum" : 5.003158883106683e-03 ,
+                                            "Maximum" : 1.502127858955418e+00 ,
+                                            "MinAuto" : true ,
+                                            "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
                                             "Inside" : true ,
                                             "Exponent" : {
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : -1 ,
+                                                "Value" : 0 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1449,17 +1510,17 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 8.731903326243716e+00 ,
-                                            "Maximum" : 8.806687293277355e+00 ,
-                                            "MinAuto" : false ,
-                                            "MaxAuto" : false ,
+                                            "Minimum" : 9.521797538448125e-03 ,
+                                            "Maximum" : 1.592653183308330e+01 ,
+                                            "MinAuto" : true ,
+                                            "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
                                             "Inside" : true ,
                                             "Exponent" : {
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : 0 ,
+                                                "Value" : 1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1679,12 +1740,134 @@
                 "Value" : [  ]
             }, 
             {
+                "Key" : "Property cohesion" ,
+                "Value" : [ 
+                    {
+                        "Key" : "5e+07" ,
+                        "Value" : {
+                            "Color" : "#00ffffFF" ,
+                            "Alias" : "" 
+                        }
+                    }
+                ]
+            }, 
+            {
                 "Key" : "Property dip" ,
                 "Value" : [  ]
             }, 
             {
                 "Key" : "Property " ,
                 "Value" : [  ]
+            }, 
+            {
+                "Key" : "Property joint-friction-1" ,
+                "Value" : [ 
+                    {
+                        "Key" : "20.6289" ,
+                        "Value" : {
+                            "Color" : "#00ffffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.9031" ,
+                        "Value" : {
+                            "Color" : "#0000ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6947" ,
+                        "Value" : {
+                            "Color" : "#ff0000FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "16.5" ,
+                        "Value" : {
+                            "Color" : "#2e8b56FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6939" ,
+                        "Value" : {
+                            "Color" : "#ff8000FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6758" ,
+                        "Value" : {
+                            "Color" : "#663333FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "18.3944" ,
+                        "Value" : {
+                            "Color" : "#6666ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "16.7269" ,
+                        "Value" : {
+                            "Color" : "#ff4000FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6269" ,
+                        "Value" : {
+                            "Color" : "#5500ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "19.7834" ,
+                        "Value" : {
+                            "Color" : "#4f632dFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "18.2604" ,
+                        "Value" : {
+                            "Color" : "#0080ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.5" ,
+                        "Value" : {
+                            "Color" : "#50755eFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.5857" ,
+                        "Value" : {
+                            "Color" : "#ff00d5FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "19.7889" ,
+                        "Value" : {
+                            "Color" : "#b7001fFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.9691" ,
+                        "Value" : {
+                            "Color" : "#aa00ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -1699,13 +1882,24 @@
                 
                 {
                     "Name" : "Viewer-ROOT #2" ,
-                    "Geom" : [ 1239 ,1239  ],
-                    "Child1" : "Editor_subi_hymar" ,
+                    "Geom" : [ 1351 ,1127  ],
+                    "Child1" : "CloseableSplitter #6" ,
                     "Child2" : "CloseableSplitter #4" ,
                     "Hor" : true ,
                     "Added" : 0 ,
-                    "Ext1" : "dat" ,
+                    "Ext1" : "" ,
                     "Ext2" : "" 
+                }
+                , 
+                {
+                    "Name" : "CloseableSplitter #6" ,
+                    "Geom" : [ 675 ,674  ],
+                    "Child1" : "Editor_subi_hymar" ,
+                    "Child2" : "Editor_comba_hymar" ,
+                    "Hor" : true ,
+                    "Added" : 0 ,
+                    "Ext1" : "dat" ,
+                    "Ext2" : "dat" 
                 }
                 , 
                 {
@@ -1719,11 +1913,10 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Plot_Plot05" 
+            "Focus" : "Editor_subi_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 
-                "Edit /home/manuus/Desktop/FLAC_TRIAL/COMBA_Hymar/comba_hymar.dat" ,
                 "Edit /home/manuus/Desktop/FLAC_TRIAL/COMBA_Hymar/subi_block.dat" 
             ]
         },

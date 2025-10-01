@@ -54,7 +54,7 @@ fish define strain_zz
 end
 
 fish define q
-    local z = zone.near(0,0,0.06)
+    local z = zone.near(0,0,0.0)
     local stress_top_zone = zone.stress(z)->zz
     global q = (stress_top_zone - conf) * -1e-6 ;(-1 * stress_top_zone - conf) * 1e-6
 end
@@ -65,15 +65,15 @@ zone property cohesion 5e7 ;very hgih
 zone property friction 30
 zone property tension 1e7
 zone property young [young]
-zone property poisson 0.35
+zone property poisson 0$.35
 
 
 ;joint parameters
 zone property dip [90 - dip_angle]
 zone property dip-direction 0
-zone property joint-cohesion 0.5e6
 zone property joint-tension 1e6
 zone property table-joint-friction 'fric-1'
+zone property table-joint-cohesion 'coh-1'
 
 table 'fric-1' add (0 20.5) (1.5e-3 21) (1.3e-2 16.5) 
 table 'coh-1' add (0 0.5e6) (1.5e-3 0.5e6) (1.3e-2 0)
