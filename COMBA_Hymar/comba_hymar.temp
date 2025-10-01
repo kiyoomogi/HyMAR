@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-01T17:58:46" ,
+        "DateTime" : "2025-10-01T18:55:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -1431,17 +1431,17 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 5.012566230900235e-03 ,
-                                            "Maximum" : 1.501191772193271e+00 ,
-                                            "MinAuto" : true ,
-                                            "MaxAuto" : true ,
+                                            "Minimum" : 2.988745293033529e-01 ,
+                                            "Maximum" : 4.347660180989795e-01 ,
+                                            "MinAuto" : false ,
+                                            "MaxAuto" : false ,
                                             "Alias" : "Strain [%]" ,
                                             "Inside" : true ,
                                             "Exponent" : {
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : 0 ,
+                                                "Value" : -1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1449,17 +1449,17 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 1.174533684295192e-01 ,
-                                            "Maximum" : 1.025973076037213e+01 ,
-                                            "MinAuto" : true ,
-                                            "MaxAuto" : true ,
+                                            "Minimum" : 8.731903326243716e+00 ,
+                                            "Maximum" : 8.806687293277355e+00 ,
+                                            "MinAuto" : false ,
+                                            "MaxAuto" : false ,
                                             "Alias" : "q [MPa]" ,
                                             "Inside" : true ,
                                             "Exponent" : {
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : 1 ,
+                                                "Value" : 0 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1719,7 +1719,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_subi_hymar" 
+            "Focus" : "Plot_Plot05" 
         },
         "Recent" : {
             "MRUMagic" : [ 
