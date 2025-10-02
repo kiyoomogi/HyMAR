@@ -72,7 +72,7 @@ zone property young-plane 2300e6
 zone property young-normal 1000e6 
 zone property poisson-plane 0.24
 zone property poisson-normal 0.24
-zone property shear-normal 200e6
+zone property shear-normal [shear_n]
     
 
 ;joint parameters
