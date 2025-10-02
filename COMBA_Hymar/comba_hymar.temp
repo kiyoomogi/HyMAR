@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-02T01:13:46" ,
+        "DateTime" : "2025-10-02T01:31:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -1041,9 +1041,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : -1.811538239121553e-03 ,
+                                        "Minimum" : -9.057691195607767e-04 ,
                                         "Maximum" : 0.000000000000000e+00 ,
-                                        "Interval" : 2.500000000000000e-04 ,
+                                        "Interval" : 1.000000000000000e-04 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1296,7 +1296,7 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -4.752370220752800e+00  , "z" : 0.000000000000000e+00 } ,
+                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -4.310539882768979e+00  , "z" : 0.000000000000000e+00 } ,
                             "ViewCenter" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } ,
                             "Up" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 1.000000000000000e+00 } ,
                             "Magnification" : 1.000000000000000e+00 ,
@@ -1513,8 +1513,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 1.006534787583604e-02 ,
-                                            "Maximum" : 3.006649915421188e+00 ,
+                                            "Minimum" : 5.005534150506569e-03 ,
+                                            "Maximum" : 1.500232361724554e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -1531,8 +1531,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 3.384621245371178e-03 ,
-                                            "Maximum" : 1.080940878123562e+01 ,
+                                            "Minimum" : 5.138756813915446e-03 ,
+                                            "Maximum" : 1.115314984621075e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1934,7 +1934,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Plot_Plot05" 
+            "Focus" : "Editor_subi_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 
