@@ -26,7 +26,7 @@ zone cmodel assign ubiquitous-anisotropic
 [global poisson = 0.24]
 [global shear_p = young_p / (2 * (1 - poisson))]
 [global shear_n = young_n / (2 * (1 - poisson))]
-[global dip_angle = 30]
+[global dip_angle = 60]
 
 ;fluid
 model configure fluid-flow
@@ -73,7 +73,7 @@ zone property young-normal 1000e6
 zone property poisson-plane 0.24
 zone property poisson-normal 0.24
 zone property shear-normal [shear_n]
-zone property shear-plane [shear_p]
+
 
 ;joint parameters
 zone property dip [90 - dip_angle]
