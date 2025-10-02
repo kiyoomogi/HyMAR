@@ -68,7 +68,7 @@ zone initialize density 2600
 zone property cohesion 5e7 ;very hgih
 zone property friction 30
 zone property tension 1e7
-zone property young-plane 2300e6
+zone property young-plane 2600e6
 zone property young-normal 1000e6 
 zone property poisson-plane 0.24
 zone property poisson-normal 0.24
@@ -90,7 +90,7 @@ zone history pore-pressure position (0,0,0.06)
 
 zone history name 'szz_bndto_avg' stress-zz position (0,0,0.06)
 
-model cycle 30000
+model cycle 12000
 
 history export 2 vs 1 table '1'
 table '1' export 'q_strain' truncate
