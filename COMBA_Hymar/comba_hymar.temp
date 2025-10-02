@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-02T00:55:46" ,
+        "DateTime" : "2025-10-02T01:10:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -1041,9 +1041,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : -1.630384415208676e-04 ,
+                                        "Minimum" : -2.482109310635009e-03 ,
                                         "Maximum" : 0.000000000000000e+00 ,
-                                        "Interval" : 2.500000000000000e-05 ,
+                                        "Interval" : 2.500000000000000e-04 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1513,8 +1513,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 5.043460618021085e-03 ,
-                                            "Maximum" : 2.704836908210746e-01 ,
+                                            "Minimum" : 1.006534787583604e-02 ,
+                                            "Maximum" : 4.124157001028196e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -1523,7 +1523,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : -1 ,
+                                                "Value" : 0 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1531,8 +1531,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 1.871470144974068e-03 ,
-                                            "Maximum" : 1.588048347238731e+00 ,
+                                            "Minimum" : 3.384621245371178e-03 ,
+                                            "Maximum" : 1.062736295260957e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1541,7 +1541,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Show" : true ,
-                                                "Value" : 0 ,
+                                                "Value" : 1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1690,7 +1690,7 @@
     ],
     "Terminal" : {
         "MoveLists" : true ,
-        "LineLimit" : 12 
+        "LineLimit" : 17 
     },
     "ColorMap" : {
         "EMaps" : [ 
@@ -1904,7 +1904,7 @@
                 {
                     "Name" : "Viewer-ROOT #2" ,
                     "Geom" : [ 1477 ,1001  ],
-                    "Child1" : "CloseableSplitter #9" ,
+                    "Child1" : "CloseableSplitter #10" ,
                     "Child2" : "CloseableSplitter #4" ,
                     "Hor" : true ,
                     "Added" : 0 ,
@@ -1913,10 +1913,10 @@
                 }
                 , 
                 {
-                    "Name" : "CloseableSplitter #9" ,
+                    "Name" : "CloseableSplitter #10" ,
                     "Geom" : [ 738 ,737  ],
-                    "Child1" : "Editor_subi_hymar" ,
-                    "Child2" : "Editor_ubiq_aniso_hymar" ,
+                    "Child1" : "Editor_ubiq_aniso_hymar" ,
+                    "Child2" : "Editor_subi_hymar" ,
                     "Hor" : true ,
                     "Added" : 0 ,
                     "Ext1" : "dat" ,
