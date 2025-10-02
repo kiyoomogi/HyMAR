@@ -4,20 +4,23 @@ zone create brick size 6 6 12 point 0 (0,0,0) point 1 (0.03, 0.0, 0) point 2 (0,
 
 zone face skin
 
-zone cmodel assign softening-ubiquitous
+zone cmodel assign columnar-basalt
 
 [global H = 0.06]
 [global r = 0.015]
 
 ;confining pressure, strain rate, initial pore pressure
 [global conf = -13.5e6] ; confinement must be negative or zero
-[global edot = 1.e-7] ; loading velocity
+[global edot = 5.e-7] ; loading velocity
 [global vz = edot * H]
 [global u0 = 3.5e6] ;initial pore pressure
 
 ;mechanical parameters
 [global young = 1.25e9]
-[global dip_angle = 0]
+[global dip_angle = 30]
+[global S = 1e20] ;joint spacing
+[global kn = 60e3] ;normal joint stiffness
+[global ks = 60e3] ;shear joint stiffness
 
 ;fluid
 model configure fluid-flow
@@ -42,22 +45,29 @@ zone face apply stress-normal [conf] range group 'East' or 'West'
 
 
 ;mechanical parameters
-zone property cohesion 5e7 ;very hgih
-zone property friction 30
 zone property tension 1e7
 zone property young [young]
 zone property poisson 0.35
 zone initialize density 2600
 
 ;joint parameters
-zone property dip [dip_angle]
-zone property dip-direction 0
-zone property joint-cohesion 0.5e6
-zone property joint-tension 0
-zone property table-joint-friction 'fric-1'
+zone property dip-3 [dip_angle]
+zone property dip-direction-3 10
+zone property joint-cohesion-3 0.5e6
+zone property joint-tension-3 0
+zone property table-joint-friction-3 'fric-1'
+
+zone property cohesion 0.5e7
+zone property friction 25.5
 
 table 'fric-1' add (0 15.5) (2e-3 15.5) (1.3e-2 12.5) 
 table 'coh-1' add (0 0.5e6) (2e-3 0.5e6) (1.3e-2 0)
+
+
+zone property space-1 [S]
+zone property stiffness-normal-1 [kn]
+zone property stiffness-shear-1 [ks]
+zone property flag-matrix-plastic false
 
 ;axial stress
 [global gps_top = list(gp.list)(gp.isgroup(::gp.list,'Top'))]
