@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-02T01:10:46" ,
+        "DateTime" : "2025-10-02T01:13:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -15,7 +15,7 @@
         {
             "Name" : "Terminal" ,
             "Entry" : {
-                "SaveFile" : "" ,
+                "SaveFile" : "subi_model.sav" ,
                 "Kernel" : {
                     "LoadCommands" : [  ],
                     "ModuleList" : {
@@ -970,7 +970,7 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "ADActive" : true ,
-                                        "Factor" : 1.000000000000000e+01 ,
+                                        "Factor" : 5.000000000000000e+00 ,
                                         "Caption" : {
                                             "Active" : true ,
                                             "Enabled" : true ,
@@ -1041,7 +1041,7 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : -2.482109310635009e-03 ,
+                                        "Minimum" : -1.811538239121553e-03 ,
                                         "Maximum" : 0.000000000000000e+00 ,
                                         "Interval" : 2.500000000000000e-04 ,
                                         "MinAuto" : true ,
@@ -1514,7 +1514,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : 1.006534787583604e-02 ,
-                                            "Maximum" : 4.124157001028196e+00 ,
+                                            "Maximum" : 3.006649915421188e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -1532,7 +1532,7 @@
                                             "Enabled" : true ,
                                             "Log" : false ,
                                             "Minimum" : 3.384621245371178e-03 ,
-                                            "Maximum" : 1.062736295260957e+01 ,
+                                            "Maximum" : 1.080940878123562e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1934,7 +1934,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_subi_hymar" 
+            "Focus" : "Plot_Plot05" 
         },
         "Recent" : {
             "MRUMagic" : [ 

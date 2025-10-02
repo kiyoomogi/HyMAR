@@ -16,7 +16,7 @@ zone cmodel assign ubiquitous-anisotropic
 
 ;confining pressure, strain rate, initial pore pressure
 [global conf = -13.5e6] ; confinement must be negative or zero
-[global edot = 5.e-6] ; loading velocity
+[global edot = 1.e-5] ; loading velocity
 [global vz = edot * H]
 [global u0 = 3.5e6] ;initial pore pressure
 
@@ -79,7 +79,7 @@ zone property shear-normal 200e6
 zone property dip [90 - dip_angle]
 zone property dip-direction 0
 zone property joint-tension 1e6
-zone property joint-friction 19.5
+zone property joint-friction 26
 zone property joint-cohesion 0.5e6
 
 
@@ -90,7 +90,7 @@ zone history pore-pressure position (0,0,0.06)
 
 zone history name 'szz_bndto_avg' stress-zz position (0,0,0.06)
 
-model cycle 50000
+model cycle 30000
 
 history export 2 vs 1 table '1'
 table '1' export 'q_strain' truncate
