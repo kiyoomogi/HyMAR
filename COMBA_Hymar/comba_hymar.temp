@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-02T00:49:46" ,
+        "DateTime" : "2025-10-02T00:55:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -1041,9 +1041,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : -5.042114765551836e-04 ,
+                                        "Minimum" : -1.630384415208676e-04 ,
                                         "Maximum" : 0.000000000000000e+00 ,
-                                        "Interval" : 5.000000000000000e-05 ,
+                                        "Interval" : 2.500000000000000e-05 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -1513,8 +1513,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 5.022159538960611e-03 ,
-                                            "Maximum" : 8.337035924082435e-01 ,
+                                            "Minimum" : 5.043460618021085e-03 ,
+                                            "Maximum" : 2.704836908210746e-01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -1531,8 +1531,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : -8.664731056429445e-05 ,
-                                            "Maximum" : 7.604255900107358e+00 ,
+                                            "Minimum" : 1.871470144974068e-03 ,
+                                            "Maximum" : 1.588048347238731e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1934,7 +1934,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Plot_Plot05" 
+            "Focus" : "Editor_subi_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 

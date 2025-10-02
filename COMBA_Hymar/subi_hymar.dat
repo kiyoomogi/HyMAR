@@ -22,7 +22,7 @@ zone cmodel assign softening-ubiquitous
 
 ;mechanical parameters
 [global young = 2e9]
-[global dip_angle = 0]
+[global dip_angle = 30]
 
 ;fluid
 model configure fluid-flow
@@ -64,9 +64,9 @@ zone initialize density 2600
 zone property cohesion 5e7 ;very hgih
 zone property friction 30
 zone property tension 1e7
-zone property young [young]
-zone property poisson-plane 0.35
-
+zone property young 2300e6
+zone property poisson 0.24
+zone property shear 200e6
 
 ;joint parameters
 zone property dip [90 - dip_angle]
@@ -75,7 +75,7 @@ zone property joint-tension 1e6
 zone property table-joint-friction 'fric-1'
 zone property table-joint-cohesion 'coh-1'
 
-table 'fric-1' add (0 20.5) (1.5e-3 21) (1.3e-2 16.5) 
+table 'fric-1' add (0 16.5) (1.5e-3 17) (1.3e-2 14.5) 
 table 'coh-1' add (0 0.5e6) (1.5e-3 0.5e6) (1.3e-2 0)
 
 history interval 100
