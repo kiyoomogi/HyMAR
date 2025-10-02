@@ -3,6 +3,8 @@ model large-strain off
 
 ;mesh
 zone import 'decovalex_mesh.f3grid'
+;zone create brick size 20 20 40 point 0 (0,0,0) point 1 (0.03, 0.0, 0) point 2 (0, 0.03, 0) point 3 (0, 0, 0.06)
+
 zone face skin
 
 zone cmodel assign columnar-basalt
@@ -11,21 +13,21 @@ zone cmodel assign columnar-basalt
 ;sample dimensions
 [global H = 0.06]
 [global r = 0.015]
-[global h = H/22.0]
-[global Hh = H + 0.003]
 
 ;confining pressure, strain rate, initial pore pressure
 [global conf = -13.5e6] ; confinement must be negative or zero
-[global edot = 5.e-6] ; loading velocity
+[global edot = 1.e-7] ; loading velocity
 [global vz = edot * H]
 [global u0 = 3.5e6] ;initial pore pressure
 
 ;mechanical parameters
-[global young = 2e9]
-[global dip_angle = 30]
+[global young = 2719e6]
+[global poisson = 0.24]
+[global shear = young / (2 * (1 - poisson))]
+[global dip_angle = 75]
 [global S = 1] ;joint spacing
-[global kn = 60e-5] ;normal joint stiffness
-[global ks = 60e-5] ;shear joint stiffness
+[global kn = 1625e6] ;normal joint stiffness
+[global ks = 1098e6] ;shear joint stiffness
 
 
 ;fluid
@@ -43,8 +45,8 @@ zone gridpoint initialize pore-pressure [u0]
 
 ;boundary and initial stress conditions
 zone face apply velocity-z [-vz] range group 'Top'
-zone gridpoint fix velocity-y 0 range position-z 0.06 0.063
-zone gridpoint fix velocity-x 0 range position-z 0.06 0.063
+;zone gridpoint fix velocity-y 0 range position-z 0.06 0.063
+;zone gridpoint fix velocity-x 0 range position-z 0.06 0.063
 ;zone gridpoint fix velocity-y 0 range position-z -0.03 0.0
 ;zone gridpoint fix velocity-x 0 range position-z -0.03 0.0
 zone face apply velocity-z 0 range group 'Bottom'
@@ -65,42 +67,53 @@ fish define q
 end
 
 
+[global gps_top = list(gp.list)(gp.isgroup(::gp.list,'Top'))]
+[global area = 3.14*0.015*0.015]
+
+[global force_top = list.sum(gp.force.unbal(::gps_top)->z)]
+[global stress_top_ini = force_top/area]
+
+
+fish define q2
+  local force_top = list.sum(gp.force.unbal(::gps_top)->z)
+  local stress_top = force_top/area-stress_top_ini
+  global q2 = (stress_top + conf) * 1e-6
+end
+
 ;mechanical parameters
 zone initialize density 2600
 zone property cohesion 5e7 ;very hgih
 zone property friction 30
-zone property tension 1e7
+zone property tension 1e10
 zone property young [young]
-zone property poisson 0.35
-
+zone property poisson [poisson]
 
 ;joint parameters
 zone property dip-1 [90 - dip_angle]
 zone property dip-direction-1 0
-zone property joint-cohesion-1 0.5e6
 zone property joint-tension-1 1e6
 zone property table-joint-friction-1 'fric-1'
 zone property table-joint-cohesion-1 'coh-1'
 
-;table 'fric-1' add (0 20.5) (1.5e-3 21) (1.3e-2 16.5) 
-table 'fric-1' add (0 16.5) (1.3e-5 15.5)
-table 'coh-1' add (0 0.5e6) (1.5e-3 0.5e6) (1.3e-2 0)
-
+table 'fric-1' add (0 13) (1.3e-3 14) (3.3e-3 9)
+table 'coh-1' add (0 0.5e6)(1.3e-4 0)
 
 zone property space-1 [S]
 zone property stiffness-normal-1 [kn]
 zone property stiffness-shear-1 [ks]
-zone property flag-matrix-plastic false
+zone property flag-matrix-plastic off
 
 
 ;Defining histories
 history interval 100
 fish history strain_zz 
 fish history q
+fish history q2
 zone history pore-pressure position (0,0,0.06)
 zone history name 'szz_bndto_avg' stress-zz position (0,0,0.06)
 
-model cycle 50000
+
+model cycle 100000
 
 history export 2 vs 1 table '1'
 table '1' export 'q_strain' truncate

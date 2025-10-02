@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-01T16:09:42" ,
+        "DateTime" : "2025-10-02T16:17:25" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -30,7 +30,8 @@
                 },
                 "SaveFiles" : {
                     "Files" : [ 
-                        "subi_model.sav" 
+                        "subi_model.sav" ,
+                        "comba_model.sav" 
                     ]
                 },
                 "ResultFiles" : {
@@ -66,7 +67,9 @@
                         "comba_hymar.dat" ,
                         "subi_hymar.dat" ,
                         "decovalex_mesh.f3grid" ,
-                        "subi_block.dat" 
+                        "subi_block.dat" ,
+                        "ubiq_aniso_hymar.dat" ,
+                        "../../HYMAR/subtask1/CU.f3dat" 
                     ]
                 },
                 "OpenFiles" : [  ]
@@ -567,16 +570,16 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : -1.167794535243653e-01  , "y" : 8.749520350823269e-02  , "z" : 9.784897462816916e-02 } ,
-                            "ViewCenter" : { "x" : 2.515412565923834e-02  , "y" : 7.217665003272575e-03  , "z" : 3.401205965206906e-02 } ,
-                            "Up" : { "x" : 2.882291505022943e-01  , "y" : -2.296359343246543e-01  , "z" : 9.296188974346257e-01 } ,
+                            "EyePosition" : { "x" : -1.034266262714793e-01  , "y" : -3.752987346517812e-02  , "z" : 3.618123534769366e-02 } ,
+                            "ViewCenter" : { "x" : 7.100978712845801e-04  , "y" : 1.603284848516929e-03  , "z" : 2.797977214024259e-02 } ,
+                            "Up" : { "x" : 9.352346764292668e-02  , "y" : -4.038599040069427e-02  , "z" : 9.947976340841376e-01 } ,
                             "Magnification" : 1.000000000000000e+00 ,
                             "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
                             "MaxClipPlaneDist" : 1.000000000000000e+10 ,
                             "SpecAsOrientation" : false ,
                             "OrientationIn" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } ,
-                            "SyncToName" : "" 
+                            "SyncToName" : "Unsynced" 
                         },
                         "Properties" : {
                             "AutoUpdate" : true ,
@@ -770,11 +773,32 @@
                                     "TransLocked" : true ,
                                     "Range" : [ 
                                         {
-                                            "Active" : true ,
+                                            "Active" : false ,
                                             "RenderModeSpecific" : true ,
                                             "ExtentModel" : true ,
                                             "Type" : 1283546101 ,
-                                            "RangePlotItem" : [  ],
+                                            "RangePlotItem" : [ 
+                                                {
+                                                    "Active" : true ,
+                                                    "Type" : 0 ,
+                                                    "PIActive" : true ,
+                                                    "ShowCaption" : true ,
+                                                    "Title" : {
+                                                        "Active" : true ,
+                                                        "Enabled" : true ,
+                                                        "Size" : 55 ,
+                                                        "Family" : "Times New Roman" ,
+                                                        "Style" : 1 ,
+                                                        "Color" : "#000000FF" ,
+                                                        "Bool" : true ,
+                                                        "Text" : "" 
+                                                    },
+                                                    "Transparency" : 90 ,
+                                                    "TransActive" : true ,
+                                                    "TransLocked" : true ,
+                                                    "Range" : [  ]
+                                                }
+                                            ],
                                             "Range" : [ 
                                                 {
                                                     "SelfIndex" : 0 ,
@@ -784,7 +808,128 @@
                                                     "Selected" : false ,
                                                     "Deselected" : false ,
                                                     "UseHidden" : false ,
-                                                    "Elements" : [  ]
+                                                    "Elements" : [ 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDBO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }, 
+                                                        {
+                                                            "Type" : 1283546004 ,
+                                                            "Element" : {
+                                                                "Not" : true ,
+                                                                "Extent" : false ,
+                                                                "By" : "" ,
+                                                                "ByAll" : false ,
+                                                                "Entries" : [ 
+                                                                    
+                                                                    {
+                                                                        "First" : "Default" ,
+                                                                        "Second" : "BNDTO" 
+                                                                    }
+                                                                ],
+                                                                "And" : true ,
+                                                                "Only" : false ,
+                                                                "Matches" : 1 ,
+                                                                "CheckBy" : false 
+                                                            }
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -839,7 +984,7 @@
                                         }
                                     },
                                     "NullFacesOnly" : false ,
-                                    "ColorScheme" : 0 ,
+                                    "ColorScheme" : 1 ,
                                     "ColorBy" : {
                                         "Active" : true ,
                                         "Enabled" : true ,
@@ -858,7 +1003,7 @@
                                             "UsePiece" : false 
                                         },
                                         "ColorName" : "Face Groups" ,
-                                        "Property" : "angle" ,
+                                        "Property" : "cohesion" ,
                                         "StateBy" : 0 ,
                                         "UsesFaceOnly" : false ,
                                         "UsesFace" : true ,
@@ -897,9 +1042,9 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : 1.797693134862316e+308 ,
-                                        "Maximum" : -1.797693134862316e+308 ,
-                                        "Interval" : 0.000000000000000e+00 ,
+                                        "Minimum" : -3.002384709842153e+07 ,
+                                        "Maximum" : -2.151137769487635e+07 ,
+                                        "Interval" : 1.000000000000000e+06 ,
                                         "MinAuto" : true ,
                                         "MaxAuto" : true ,
                                         "IntAuto" : true ,
@@ -924,44 +1069,44 @@
                                         "Format" : 0 
                                     },
                                     "Data" : {
-                                        "Active" : false ,
+                                        "Active" : true ,
                                         "Enabled" : true ,
                                         "Data" : [ 
                                             {
-                                                "Component" : 0 ,
-                                                "Quantity" : 6 ,
+                                                "Component" : 2 ,
+                                                "Quantity" : 2 ,
                                                 "Type" : 0 ,
                                                 "Extra" : 1 ,
                                                 "Stress" : false ,
                                                 "Log" : false ,
-                                                "Active" : false ,
+                                                "Active" : true ,
                                                 "Keyword" : "stress" ,
                                                 "GpData" : {
-                                                    "Component" : 0 ,
-                                                    "Quantity" : 6 ,
+                                                    "Component" : 2 ,
+                                                    "Quantity" : 2 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : false ,
                                                     "Log" : false ,
-                                                    "Active" : false ,
+                                                    "Active" : true ,
                                                     "Keyword" : "" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
                                                 },
                                                 "ZoneData" : {
-                                                    "Component" : 0 ,
-                                                    "Quantity" : 6 ,
+                                                    "Component" : 2 ,
+                                                    "Quantity" : 2 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : true ,
                                                     "Log" : false ,
-                                                    "Active" : false ,
+                                                    "Active" : true ,
                                                     "Keyword" : "stress" ,
-                                                    "Property" : "" ,
+                                                    "Property" : "joint-friction-1" ,
                                                     "PropType" : 0 
                                                 },
                                                 "ZoneInterp" : {
-                                                    "Active" : false ,
+                                                    "Active" : true ,
                                                     "Method" : 0 ,
                                                     "RadRatio" : 7.500000000000000e-01 ,
                                                     "Power" : 3.000000000000000e+00 ,
@@ -976,13 +1121,13 @@
                                             "Enabled" : true ,
                                             "Data" : [ 
                                                 {
-                                                    "Component" : 0 ,
-                                                    "Quantity" : 6 ,
+                                                    "Component" : 2 ,
+                                                    "Quantity" : 2 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : false ,
                                                     "Log" : false ,
-                                                    "Active" : false ,
+                                                    "Active" : true ,
                                                     "Keyword" : "" ,
                                                     "VelLimit" : 1.000000000000000e-04 ,
                                                     "Datum" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } 
@@ -994,15 +1139,15 @@
                                             "Enabled" : true ,
                                             "Data" : [ 
                                                 {
-                                                    "Component" : 0 ,
-                                                    "Quantity" : 6 ,
+                                                    "Component" : 2 ,
+                                                    "Quantity" : 2 ,
                                                     "Type" : 0 ,
                                                     "Extra" : 1 ,
                                                     "Stress" : true ,
                                                     "Log" : false ,
-                                                    "Active" : false ,
+                                                    "Active" : true ,
                                                     "Keyword" : "stress" ,
-                                                    "Property" : "" ,
+                                                    "Property" : "joint-friction-1" ,
                                                     "PropType" : 0 
                                                 }
                                             ]
@@ -1286,7 +1431,7 @@
                                                             "Alias" : "" ,
                                                             "Label" : "None" ,
                                                             "Bool" : true ,
-                                                            "Used2" : true ,
+                                                            "Used2" : false ,
                                                             "Default" : false 
                                                         }
                                                         , 
@@ -1414,16 +1559,16 @@
                         "View" : {
                             "Locked" : false ,
                             "Perspective" : true ,
-                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -3.335084444634110e+00  , "z" : 0.000000000000000e+00 } ,
+                            "EyePosition" : { "x" : 0.000000000000000e+00  , "y" : -4.310539882768979e+00  , "z" : 0.000000000000000e+00 } ,
                             "ViewCenter" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } ,
                             "Up" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 1.000000000000000e+00 } ,
                             "Magnification" : 1.000000000000000e+00 ,
-                            "FirstViewAuto" : true ,
+                            "FirstViewAuto" : false ,
                             "MinClipPlaneDist" : -1.000000000000000e+10 ,
                             "MaxClipPlaneDist" : 1.000000000000000e+10 ,
                             "SpecAsOrientation" : false ,
                             "OrientationIn" : { "x" : 0.000000000000000e+00  , "y" : 0.000000000000000e+00  , "z" : 0.000000000000000e+00 } ,
-                            "SyncToName" : "" 
+                            "SyncToName" : "Unsynced" 
                         },
                         "Properties" : {
                             "AutoUpdate" : true ,
@@ -1631,8 +1776,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : -8.560443499344359e+301 ,
-                                            "Maximum" : 8.560443499344359e+301 ,
+                                            "Minimum" : 2.179918517020487e-03 ,
+                                            "Maximum" : 6.087541784920703e-01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -1640,8 +1785,8 @@
                                             "Exponent" : {
                                                 "Active" : true ,
                                                 "Enabled" : true ,
-                                                "Show" : false ,
-                                                "Value" : 301 ,
+                                                "Show" : true ,
+                                                "Value" : -1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1649,8 +1794,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : -8.560443499344359e+301 ,
-                                            "Maximum" : 8.560443499344359e+301 ,
+                                            "Minimum" : -3.789721832378823e+01 ,
+                                            "Maximum" : 1.139248245689446e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1658,8 +1803,8 @@
                                             "Exponent" : {
                                                 "Active" : true ,
                                                 "Enabled" : true ,
-                                                "Show" : false ,
-                                                "Value" : 301 ,
+                                                "Show" : true ,
+                                                "Value" : 1 ,
                                                 "Auto" : true 
                                             }
                                         },
@@ -1710,7 +1855,7 @@
                                                 "Active" : true ,
                                                 "Enabled" : true ,
                                                 "Style" : 0 ,
-                                                "Name" : "" ,
+                                                "Name" : "2" ,
                                                 "Alias" : "" ,
                                                 "XReversed" : false ,
                                                 "YReversed" : false ,
@@ -1729,14 +1874,39 @@
                                                     "Size" : 2 ,
                                                     "Type" : 0 
                                                 },
+                                                "ID" : "2" 
+                                            }, 
+                                            {
+                                                "Active" : true ,
+                                                "Enabled" : true ,
+                                                "Style" : 0 ,
+                                                "Name" : "3" ,
+                                                "Alias" : "" ,
+                                                "XReversed" : false ,
+                                                "YReversed" : false ,
+                                                "Line" : {
+                                                    "Active" : true ,
+                                                    "Enabled" : true ,
+                                                    "Width" : 2 ,
+                                                    "Style" : 1 ,
+                                                    "Color" : "#2e8b56FF" ,
+                                                    "Bool" : true 
+                                                },
+                                                "Mark" : {
+                                                    "Active" : true ,
+                                                    "Enabled" : true ,
+                                                    "Color" : "#2e8b56FF" ,
+                                                    "Size" : 2 ,
+                                                    "Type" : 0 
+                                                },
                                                 "ID" : "3" 
                                             }
                                         ]
                                     },
                                     "Begin" : 0 ,
-                                    "End" : 0 ,
+                                    "End" : 300000 ,
                                     "Skip" : 0 ,
-                                    "Vs" : "2" ,
+                                    "Vs" : "1" ,
                                     "VsReversed" : true ,
                                     "VsCaption" : false ,
                                     "VsText" : {
@@ -1757,7 +1927,7 @@
                     }
                 ],
                 "HiddenPlots" : [  ],
-                "HiddenIds" : [ 1 ,3 ,4  ],
+                "HiddenIds" : [  ],
                 "Views" : [  ]
             }
         }, 
@@ -1814,57 +1984,7 @@
         "EMaps" : [ 
             {
                 "Key" : "Group" ,
-                "Value" : [ 
-                    {
-                        "Key" : "Default=INJEC" ,
-                        "Value" : {
-                            "Color" : "#00ffffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "Default=Brick3" ,
-                        "Value" : {
-                            "Color" : "#0080ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "Default=BNDTO" ,
-                        "Value" : {
-                            "Color" : "#2e8b56FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "Default=BNDBO" ,
-                        "Value" : {
-                            "Color" : "#ff0000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "Default=Brick1" ,
-                        "Value" : {
-                            "Color" : "#ff00d5FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "Default=Brick2" ,
-                        "Value" : {
-                            "Color" : "#ff4000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "Default=Brick8" ,
-                        "Value" : {
-                            "Color" : "#b7001fFF" ,
-                            "Alias" : "" 
-                        }
-                    }
-                ]
+                "Value" : [  ]
             }, 
             {
                 "Key" : "Face Groups" ,
@@ -1922,119 +2042,17 @@
             }, 
             {
                 "Key" : "State By Average" ,
-                "Value" : [ 
-                    {
-                        "Key" : "shear-n shear-p tension-p j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#6666ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "tension-n tension-p j-shear-p j-tension-p" ,
-                        "Value" : {
-                            "Color" : "#0000ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "shear-p j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#ff8000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "shear-n shear-p" ,
-                        "Value" : {
-                            "Color" : "#663333FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "j-shear-n" ,
-                        "Value" : {
-                            "Color" : "#ff00d5FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "shear-n shear-p j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#4f632dFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "shear-p j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#b7001fFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "tension-p j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#ff4000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "tension-p j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#0080ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "tension-n shear-p tension-p j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#50755eFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "None" ,
-                        "Value" : {
-                            "Color" : "#ff0000FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "shear-p tension-p j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#aa00ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "j-shear-n j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#2e8b56FF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "j-shear-p" ,
-                        "Value" : {
-                            "Color" : "#00ffffFF" ,
-                            "Alias" : "" 
-                        }
-                    }, 
-                    {
-                        "Key" : "shear-p" ,
-                        "Value" : {
-                            "Color" : "#5500ffFF" ,
-                            "Alias" : "" 
-                        }
-                    }
-                ]
+                "Value" : [  ]
             }, 
             {
                 "Key" : "Property angle" ,
+                "Value" : [  ]
+            }, 
+            {
+                "Key" : "Property cohesion" ,
                 "Value" : [ 
                     {
-                        "Key" : "0" ,
+                        "Key" : "5e+07" ,
                         "Value" : {
                             "Color" : "#00ffffFF" ,
                             "Alias" : "" 
@@ -2044,23 +2062,117 @@
             }, 
             {
                 "Key" : "Property dip" ,
+                "Value" : [  ]
+            }, 
+            {
+                "Key" : "Property " ,
+                "Value" : [  ]
+            }, 
+            {
+                "Key" : "Property joint-friction-1" ,
                 "Value" : [ 
                     {
-                        "Key" : "60" ,
+                        "Key" : "20.6289" ,
                         "Value" : {
                             "Color" : "#00ffffFF" ,
                             "Alias" : "" 
                         }
-                    }
-                ]
-            }, 
-            {
-                "Key" : "Property " ,
-                "Value" : [ 
+                    }, 
                     {
-                        "Key" : "N/A" ,
+                        "Key" : "20.9031" ,
                         "Value" : {
-                            "Color" : "#00ffffFF" ,
+                            "Color" : "#0000ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6947" ,
+                        "Value" : {
+                            "Color" : "#ff0000FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "16.5" ,
+                        "Value" : {
+                            "Color" : "#2e8b56FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6939" ,
+                        "Value" : {
+                            "Color" : "#ff8000FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6758" ,
+                        "Value" : {
+                            "Color" : "#663333FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "18.3944" ,
+                        "Value" : {
+                            "Color" : "#6666ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "16.7269" ,
+                        "Value" : {
+                            "Color" : "#ff4000FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.6269" ,
+                        "Value" : {
+                            "Color" : "#5500ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "19.7834" ,
+                        "Value" : {
+                            "Color" : "#4f632dFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "18.2604" ,
+                        "Value" : {
+                            "Color" : "#0080ffFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.5" ,
+                        "Value" : {
+                            "Color" : "#50755eFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.5857" ,
+                        "Value" : {
+                            "Color" : "#ff00d5FF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "19.7889" ,
+                        "Value" : {
+                            "Color" : "#b7001fFF" ,
+                            "Alias" : "" 
+                        }
+                    }, 
+                    {
+                        "Key" : "20.9691" ,
+                        "Value" : {
+                            "Color" : "#aa00ffFF" ,
                             "Alias" : "" 
                         }
                     }
@@ -2079,17 +2191,28 @@
                 
                 {
                     "Name" : "Viewer-ROOT #2" ,
-                    "Geom" : [ 1239 ,1239  ],
-                    "Child1" : "Editor_subi_hymar" ,
-                    "Child2" : "CloseableSplitter #10" ,
+                    "Geom" : [ 1552 ,926  ],
+                    "Child1" : "CloseableSplitter #11" ,
+                    "Child2" : "CloseableSplitter #4" ,
                     "Hor" : true ,
                     "Added" : 0 ,
-                    "Ext1" : "dat" ,
+                    "Ext1" : "" ,
                     "Ext2" : "" 
                 }
                 , 
                 {
-                    "Name" : "CloseableSplitter #10" ,
+                    "Name" : "CloseableSplitter #11" ,
+                    "Geom" : [ 775 ,775  ],
+                    "Child1" : "Editor_comba_hymar" ,
+                    "Child2" : "Editor_subi_hymar" ,
+                    "Hor" : true ,
+                    "Added" : 0 ,
+                    "Ext1" : "dat" ,
+                    "Ext2" : "dat" 
+                }
+                , 
+                {
+                    "Name" : "CloseableSplitter #4" ,
                     "Geom" : [ 488 ,487  ],
                     "Child1" : "Plot_Plot05" ,
                     "Child2" : "Plot_history_plot" ,
@@ -2099,12 +2222,13 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_subi_hymar" 
+            "Focus" : "Editor_comba_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 
-                "Edit /home/manuus/Desktop/FLAC_TRIAL/COMBA_Hymar/subi_block.dat" ,
-                "Edit /home/manuus/Desktop/FLAC_TRIAL/COMBA_Hymar/comba_hymar.dat" 
+                "Edit /home/manuus/Desktop/HYMAR/subtask1/CU.f3dat" ,
+                "Edit /home/manuus/Desktop/FLAC_TRIAL/COMBA_Hymar/ubiq_aniso_hymar.dat" ,
+                "Edit /home/manuus/Desktop/FLAC_TRIAL/COMBA_Hymar/subi_block.dat" 
             ]
         },
         "ProjVis" : true ,
