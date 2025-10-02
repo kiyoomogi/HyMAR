@@ -62,7 +62,7 @@ df_z30_10 = pd.read_csv(
 
 # plot q vs strain
 plt.figure()
-plt.plot(df["strain"], df["q"], color='green', label='Modelled')
+plt.plot(df["strain"], df["q"], color='green', label='Modelled-SUBI')
 plt.plot(df_anis["strain"], df_anis["q"], color='red', label='Modelled-Anisotropy')
 
 plt.plot(df_z30_10["axial strain[%]"], df_z30_10["diff. stress[MPa]"], color='blue', label='Measured')
