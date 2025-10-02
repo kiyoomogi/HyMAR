@@ -73,7 +73,7 @@ zone property young-normal 1000e6
 zone property poisson-plane 0.24
 zone property poisson-normal 0.24
 zone property shear-normal [shear_n]
-    
+zone property shear-plane [shear_p]
 
 ;joint parameters
 zone property dip [90 - dip_angle]

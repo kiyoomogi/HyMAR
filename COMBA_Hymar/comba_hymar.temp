@@ -7,7 +7,7 @@
         "Revision" : 29 ,
         "Source" : "4e3872624a" ,
         "Binary" : false ,
-        "DateTime" : "2025-10-02T01:40:46" ,
+        "DateTime" : "2025-10-02T01:49:46" ,
         "Format" : 0 ,
         "Dimension" : 3 
     },
@@ -1041,7 +1041,7 @@
                                         "Active" : true ,
                                         "Enabled" : true ,
                                         "RampKeyword" : "rainbow" ,
-                                        "Minimum" : -7.246152956482199e-04 ,
+                                        "Minimum" : -9.057691195607767e-04 ,
                                         "Maximum" : 0.000000000000000e+00 ,
                                         "Interval" : 1.000000000000000e-04 ,
                                         "MinAuto" : true ,
@@ -1513,8 +1513,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 9.949567219619784e-03 ,
-                                            "Maximum" : 1.198651269257285e+00 ,
+                                            "Minimum" : 4.962763459349583e-03 ,
+                                            "Maximum" : 1.498191302952932e+00 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "Strain [%]" ,
@@ -1531,8 +1531,8 @@
                                             "Active" : true ,
                                             "Enabled" : true ,
                                             "Log" : false ,
-                                            "Minimum" : 2.952152946219221e-02 ,
-                                            "Maximum" : 1.193604829069604e+01 ,
+                                            "Minimum" : 5.144766007719561e-02 ,
+                                            "Maximum" : 2.559606572243149e+01 ,
                                             "MinAuto" : true ,
                                             "MaxAuto" : true ,
                                             "Alias" : "q [MPa]" ,
@@ -1934,7 +1934,7 @@
                     "Ext2" : "" 
                 }
             ],
-            "Focus" : "Editor_ubiq_aniso_hymar" 
+            "Focus" : "Editor_subi_hymar" 
         },
         "Recent" : {
             "MRUMagic" : [ 
