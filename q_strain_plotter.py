@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-pathq = "/Users/matthijsnuus/Desktop/hymar/COMBA_Hymar/q_strain.tab"
+pathq = "/Users/matthijsnuus/Desktop/hymar/COMBA_Hymar/q_strain_soft.tab"
 path_aniso = "/Users/matthijsnuus/Desktop/hymar/COMBA_Hymar/q_strain_aniso.tab"
-path_pp = "/Users/matthijsnuus/Desktop/hymar/COMBA_Hymar/pp_strain.tab"
+path_pp = "/Users/matthijsnuus/Desktop/hymar/COMBA_Hymar/pp_strain_soft.tab"
 pathw = "/Users/matthijsnuus/Desktop/hymar/winhausen_data/OPA-Z30-10MPa_OPA10.txt"
 
 
