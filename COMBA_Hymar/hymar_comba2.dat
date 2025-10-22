@@ -1,0 +1,201 @@
+model new
+;call 'flac_python.py'
+model large-strain off
+
+zone import 'decovalex_mesh.f3grid'
+zone face skin
+
+zone cmodel assign columnar-basalt
+
+
+;global parameters
+[global conf = -12.5e6]  ;confining stress
+[global u0 = 2.5e6]      ;initial pore pressure
+[global space = 1]
+[global dip = 90]        ;dip of sample
+[global dip2 = 58]       ;dip of second joint, in case no failure along bedding (dont change)
+[global young = 3e9] 
+[global poisson = 0.2]
+
+[global ks = 0.8e9] ;10 MPa normal joint stiffness
+[global kn = 1.6e9] ;10 MPa shear joint stiffness
+
+[global H = 0.06]
+[global r = 0.015] 
+[global appliedVel = 2.5e-8] ; loading velocity
+
+;fluid
+model configure fluid-flow
+zone fluid cmodel assign anisotropic
+zone fluid property fluid-density 1000
+zone fluid property biot-modulus 12e9 
+zone fluid property pore-pressure-generation on
+zone fluid property porosity 0.16 
+zone fluid property mobility-coefficient 5e-17 ; Permeability / viscosity
+zone gridpoint initialize pore-pressure [u0]
+
+
+;initialize and BC
+zone initialize stress xx [conf] yy [conf] zz [conf] xy 0 xz 0 yz 0
+zone face apply velocity-z 0 range group 'Bottom'
+zone face apply velocity-z [-appliedVel] range group 'Top'
+zone gridpoint fix velocity-y 0 range position-z 0.06 0.063
+zone gridpoint fix velocity-x 0 range position-z 0.06 0.063
+zone face apply stress-normal [conf] range group 'East' or 'West'
+
+
+;retrieve q and strain
+[global gps_top = list(gp.list)(gp.isgroup(::gp.list,'Top'))]
+[global gps_bot = list(gp.list)(gp.isgroup(::gp.list,'Bottom'))]
+
+[global area = 3.14 * r * r]
+fish define q
+  local force_top = list.sum(gp.force.unbal(::gps_top)->z)
+  global q = ((force_top/area) + conf) * 1e-6
+end
+
+
+[global gp_top1 = gp.near(0,0,0.06)]
+[global zlength = H]
+fish define strain_zz
+  global strain_zz = 100.0*1.0*gp.disp.z(gp_top1)/0.06
+end
+
+fish define pp_avg
+    local n = list.size(gps_top) + list.size(gps_bot)                   ; count of gridpoints
+    local s = list.sum(gp.pp(::gps_top)) + list.sum(gp.pp(::gps_bot))   ; map gp.pp over the list
+    pp_avg = ((s / n) - u0) * 1e-6
+end
+
+[global gp_side1 = gp.near(0,0.015,0.03)]
+fish define strain_yy
+  global strain_yy = 100.0*1.0*gp.disp.y(gp_side1)/0.0015
+end
+
+fish define V0_m
+    V0_m = 0.0
+    loop foreach local z zone.list
+        V0_m += zone.vol(z)
+    end_loop
+    global V0_m
+end
+[V0_m]
+
+fish define epsv_pct
+    local Vdef = 0.0
+    loop foreach local z zone.list
+        Vdef += zone.vol.deformed(z)
+    end_loop
+    global epsv_pct = 100.0 * (V0_m - Vdef) / V0_m   ; compression negative
+end
+
+fish define p_tot
+    local sig3 = -conf * 1e-6        ; MPa (σ3 > 0 in compression)
+    local sig1 = list.sum(gp.force.unbal(::gps_top)->z) / area            ; since q = σ1 - σ3 (MPa)
+    global p_tot = (sig1*1e-6 + 2.0*sig3) / 3.0 - (pp_avg + u0*1e-6)
+end
+
+
+; mean effective stress p' = p - u  (MPa)
+fish define p_eff
+    local ubar = (u0 * 1e-6) + pp_avg   ; absolute pore pressure (MPa)
+    global p_eff = p_tot ;- ubar
+end
+
+
+;mechanical parameters
+zone initialize density 2600
+zone property cohesion 1e10 
+zone property friction 15
+zone property tension 3e8
+zone property young [young]
+zone property poisson [poisson]
+
+;joint parameters
+zone property dip-1 [dip]
+zone property dip-direction-1 0
+zone property joint-tension-1 1e6
+zone property joint-friction-1 0 range group 'BNDTO'
+zone property joint-cohesion-1 0 range group 'BNDTO'
+
+zone property dip-2 [dip2]
+zone property dip-direction-2 0
+zone property joint-tension-2 1e6
+
+
+;---------------
+
+;if bedding =! 00 or 90: uncomment the table coh-1 and fric-1 for the chosen bedding angle, uncomment coh-2 "for test and if sample is not 00 or 90"
+;if bedding == 00 or 90: uncomment the table coh-1 and fric-1 "for test and if sample is 00 or 90" and uncomment coh-2 and fric-2 for the chosen bedding angle
+
+;---------------
+table 'fric-1' add (0 22) (0.1 22)                                 ;for test and if sample is 00 or 90 
+table 'coh-1' add (0 0.7e6) (0.1 0.7e6)                            ;for test and if sample is 00 or 90 
+
+;table 'fric-1' add (0 13.08) (1e-3 13.08)                          ;for 45 / 4 MPa
+;table 'coh-1' add (0 0.8e6) (0.002 1.5e6) (0.0045 0.6e6)           ;for 45 / 4 MPa
+;table 'fric-1' add (0 14.33) (1e-3 14.33)                          ;for 60 / 10 MPa
+;table 'coh-1' add (0 0.35e6) (0.004 2e6) (0.009 0.5e6)             ;for 60 / 10 MPa
+;table 'fric-1' add (0 14.76) (1e-3 14.76)                          ;for 45 / 10 MPa
+;table 'coh-1' add (0 0.6e6) (0.002 2.3e6) (0.0045 0.14e6)          ;for 45 / 10 MPa
+;table 'fric-1' add (0 14.83) (1e-3 14.83)                          ;for 30 / 10 MPa
+;table 'coh-1' add (0 0.57e6) (0.004 2.6e6) (0.009 0.45e6)          ;for 30 / 10 MPa
+
+
+table 'fric-2' add (0 27) (1e-3 27) (7e-3 27)                       ;for 90 and 00 / 4 and 10 MPa
+table 'coh-2' add (0 0.13e6) (0.004 3.5e6) (0.009 0.2e6)            ;for 90 / 4 and 10 MPa
+;table 'coh-2' add (0 1.78e6) (0.004 3.5e6) (0.009 1.29e6)          ;for 00 / 4 and 10 MPa 
+;table 'coh-2' add (0 3.5e6) (0.002 3.5e6) (0.02 3.5e6)             ;for test and if sample is not 00 or 90 
+
+
+table 'fric-b' add (0 30) (1 30)                                    ;for top boundary layer
+table 'coh-b' add (0 1e9) (1 1e9)                                   ;for top boundary layer
+
+
+zone property table-joint-friction-1 'fric-1' range group 'INJEC'
+zone property table-joint-cohesion-1 'coh-1' range group 'INJEC'
+zone property table-joint-friction-2 'fric-2' range group 'INJEC'
+zone property table-joint-cohesion-2 'coh-2' range group 'INJEC'
+zone property table-joint-friction-1 'fric-b' range group 'BNDTO'
+zone property table-joint-cohesion-1 'coh-b' range group 'BNDTO'
+zone property table-joint-friction-2 'fric-b' range group 'BNDTO'
+zone property table-joint-cohesion-2 'coh-b' range group 'BNDTO'
+
+zone property space-1 [space]
+zone property stiffness-normal-1 [kn]
+zone property stiffness-shear-1 [ks]
+
+zone property space-2 [space]
+zone property stiffness-normal-2 1e11
+zone property stiffness-shear-2 1e11
+
+zone property flag-matrix-plastic off
+
+history interval 30
+fish history q
+fish history strain_zz
+fish history pp_avg
+fish history strain_yy
+fish history V0_m
+fish history epsv_pct
+fish history p_tot
+
+
+;model mechanical timestep automatic off
+model cycle 36000
+
+; convert to +MPa text for filename suffix
+[global conf_mpa = math.abs(conf)/1.0e6]
+; -------- exports with dip and conf in the filename --------
+history export 1 vs 2 table '1'
+table '1' export [string.build("q_strain%1_%2",     dip, conf_mpa)] truncate
+history export 3 vs 2 table '2'
+table '2' export [string.build("pp_strain%1_%2",    dip, conf_mpa)] truncate
+history export 1 vs 4 table '3'
+table '3' export [string.build("q_radstrain%1_%2",  dip, conf_mpa)] truncate
+history export 6 vs 2 table '4'
+table '4' export [string.build("evol_ax%1_%2",      dip, conf_mpa)] truncate
+history export 1 vs 7 table '5'
+table '5' export [string.build("q_p%1_%2",          dip, conf_mpa)] truncate
+
+model save  [string.build("CU%1_%2",                dip, conf_mpa)]
